@@ -1,0 +1,18 @@
+{
+  "name": "news-comparison",
+  "version": "1.0.0",
+  "description": "Compare different news organisation's views on the same topic.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Susie Coleman",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "dependencies": {
+    "dotenv": "4.0.0",
+    "node-fetch": "1.7.3"
+  }
+}

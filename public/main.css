@@ -1,0 +1,82 @@
+.yellow {
+  color: #F59300;
+}
+
+.blue {
+  color: #213D64;
+}
+
+.white {
+  color: #fff;
+}
+
+.blue_background {
+  background-color: #213D64;
+}
+
+.yellow_background {
+  background-color: #F59300;
+}
+
+.url-no_default_style {
+  text-decoration: none;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.page--container-centre {
+  display: flex;
+  justify-content: center;
+}
+
+.page--item-centre {
+  max-width: 90%;
+  flex-grow: 1;
+}
+
+.page--header-font {
+  text-align: center;
+  font-size: 4.5vw;
+}
+  
+.page--grid-layout {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 32.6% 32.6% 32.6%;
+  grid-gap: 1vw;
+}
+
+.grid--box-3_column_span {
+  grid-column: 1 / 4;
+}
+
+.grid--box {
+  padding-bottom: 1vh;
+}
+
+.grid--link_box:hover {
+  background-color: #008fcf;
+}
+
+.box--image-full_width_image {
+  max-width:100%;
+}
+
+.box--text-default_layout {
+  padding: 0 0.5vw;
+  margin: 0vw;
+}
+
+.box--header {
+  font-size: 2vw;
+}
+
+.box--subheader {
+  font-size: 1.7vw;
+}
+
+.powered_by-text_align {
+  text-align: right;
+}
