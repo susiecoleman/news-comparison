@@ -4,7 +4,6 @@ const articleResponse = require('./api.js')
 
 function handler (request, response) {
     const endpoint = request.url; 
-    console.log("Endpoint", endpoint);
     if (endpoint === "/") {
         sendResponse(response, "index.html", "text/html")
     }else if(endpoint.startsWith("/article")){
@@ -38,7 +37,6 @@ function sendResponse(response, fileName, contentType) {
 
 function sendArticleResponse(data, response) {
     var json = JSON.parse(data);
-    console.log("Json", json);
     articleResponse(json.searchTerm, json.source).then(
         content => {
             response.writeHead(200, {"Content-Type": "application/json"});
