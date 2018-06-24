@@ -4,11 +4,10 @@ const articleResponse = require('./api.js')
 
 function handler (request, response) {
     const endpoint = request.url; 
+    console.log("Endpoint", endpoint);
     if (endpoint === "/") {
         sendResponse(response, "index.html", "text/html")
-    } else if(endpoint.includes(".css")){
-        sendResponse(response, endpoint, "text/css")  
-    } else if(endpoint.startsWith("/article")){
+    }else if(endpoint.startsWith("/article")){
         var data = '';
         request.on('data', function (chunk) {
             data += chunk;
@@ -16,9 +15,11 @@ function handler (request, response) {
         request.on('end', function () {
             sendArticleResponse(data, response);    
         });
+    } else if(endpoint.includes(".css")){
+        sendResponse(response, endpoint, "text/css");
     }
     else {
-        sendResponse(response, endpoint, "application/javascript")     
+        sendResponse(response, endpoint, "application/javascript");  
     }
 }
 
@@ -37,6 +38,7 @@ function sendResponse(response, fileName, contentType) {
 
 function sendArticleResponse(data, response) {
     var json = JSON.parse(data);
+    console.log("Json", json);
     articleResponse(json.searchTerm, json.source).then(
         content => {
             response.writeHead(200, {"Content-Type": "application/json"});
