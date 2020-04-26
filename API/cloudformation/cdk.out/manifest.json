@@ -1,0 +1,152 @@
+{
+  "version": "1.33.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CloudformationStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CloudformationStack.template.json"
+      },
+      "metadata": {
+        "/CloudformationStack": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "app",
+                "Value": "news-comparison"
+              }
+            ],
+            "trace": [
+              "ConstructNode.addMetadata (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/core/lib/construct-compat.ts:400:92)",
+              "CloudformationStack.prepare (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/core/lib/stack.ts:747:17)",
+              "CloudformationStack.onPrepare (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/core/lib/construct-compat.ts:111:10)",
+              "Node.prepare (/home/susie/Code/news-comparison/cloudformation/node_modules/constructs/lib/construct.ts:429:12)",
+              "Node.synthesize (/home/susie/Code/news-comparison/cloudformation/node_modules/constructs/lib/construct.ts:386:10)",
+              "Function.synth (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/core/lib/construct-compat.ts:231:22)",
+              "App.synth (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/core/lib/app.ts:142:36)",
+              "process.App.process.once (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/core/lib/app.ts:121:45)",
+              "Object.onceWrapper (events.js:286:20)",
+              "process.emit (events.js:198:13)",
+              "process.EventEmitter.emit (domain.js:448:20)",
+              "process.emit (/home/susie/Code/news-comparison/cloudformation/node_modules/source-map-support/source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:126:23)"
+            ]
+          }
+        ],
+        "/CloudformationStack/NewsLambdaCodeBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NewsLambdaCodeBucket5864ACB3",
+            "trace": [
+              "new Bucket (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1015:22)",
+              "new CloudformationStack (/home/susie/Code/news-comparison/cloudformation/lib/cloudformation-stack.ts:11:24)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/cloudformation/bin/cloudformation.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/CloudformationStack/NewsLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NewsLambdaServiceRole0C598DBB",
+            "trace": [
+              "new Role (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/aws-iam/lib/role.ts:315:18)",
+              "new Function (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/aws-lambda/lib/function.ts:478:31)",
+              "new CloudformationStack (/home/susie/Code/news-comparison/cloudformation/lib/cloudformation-stack.ts:16:5)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/cloudformation/bin/cloudformation.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/CloudformationStack/NewsLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NewsLambda6C3C0799",
+            "trace": [
+              "new Function (/home/susie/Code/news-comparison/cloudformation/node_modules/@aws-cdk/aws-lambda/lib/function.ts:493:35)",
+              "new CloudformationStack (/home/susie/Code/news-comparison/cloudformation/lib/cloudformation-stack.ts:16:5)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/cloudformation/bin/cloudformation.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/cloudformation/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.35.0",
+      "@aws-cdk/cx-api": "1.35.0",
+      "@aws-cdk/cloud-assembly-schema": "1.35.0",
+      "@aws-cdk/aws-lambda": "1.35.0",
+      "@aws-cdk/aws-iam": "1.35.0",
+      "@aws-cdk/region-info": "1.35.0",
+      "@aws-cdk/aws-cloudwatch": "1.35.0",
+      "@aws-cdk/aws-ec2": "1.35.0",
+      "@aws-cdk/aws-ssm": "1.35.0",
+      "@aws-cdk/aws-logs": "1.35.0",
+      "@aws-cdk/aws-s3": "1.35.0",
+      "@aws-cdk/aws-events": "1.35.0",
+      "@aws-cdk/aws-kms": "1.35.0",
+      "@aws-cdk/aws-sqs": "1.35.0",
+      "@aws-cdk/aws-s3-assets": "1.35.0",
+      "@aws-cdk/assets": "1.35.0",
+      "jsii-runtime": "node.js/v10.20.1"
+    }
+  }
+}
