@@ -8,17 +8,17 @@
         "id": "Tree",
         "path": "Tree"
       },
-      "CloudformationStack": {
-        "id": "CloudformationStack",
-        "path": "CloudformationStack",
+      "NewsSearchStack": {
+        "id": "NewsSearchStack",
+        "path": "NewsSearchStack",
         "children": {
-          "NewsLambdaCodeBucket": {
-            "id": "NewsLambdaCodeBucket",
-            "path": "CloudformationStack/NewsLambdaCodeBucket",
+          "NewsSearchLambdaCodeBucket": {
+            "id": "NewsSearchLambdaCodeBucket",
+            "path": "NewsSearchStack/NewsSearchLambdaCodeBucket",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "CloudformationStack/NewsLambdaCodeBucket/Resource",
+                "path": "NewsSearchStack/NewsSearchLambdaCodeBucket/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                   "aws:cdk:cloudformation:props": {
@@ -27,7 +27,7 @@
                     "tags": [
                       {
                         "key": "app",
-                        "value": "news-comparison"
+                        "value": "news-search-api"
                       }
                     ]
                   }
@@ -35,21 +35,21 @@
               },
               "Notifications": {
                 "id": "Notifications",
-                "path": "CloudformationStack/NewsLambdaCodeBucket/Notifications"
+                "path": "NewsSearchStack/NewsSearchLambdaCodeBucket/Notifications"
               }
             }
           },
-          "NewsLambda": {
-            "id": "NewsLambda",
-            "path": "CloudformationStack/NewsLambda",
+          "NewsSearchLambda": {
+            "id": "NewsSearchLambda",
+            "path": "NewsSearchStack/NewsSearchLambda",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "CloudformationStack/NewsLambda/ServiceRole",
+                "path": "NewsSearchStack/NewsSearchLambda/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "CloudformationStack/NewsLambda/ServiceRole/Resource",
+                    "path": "NewsSearchStack/NewsSearchLambda/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -82,7 +82,7 @@
                         "tags": [
                           {
                             "key": "app",
-                            "value": "news-comparison"
+                            "value": "news-search-api"
                           }
                         ]
                       }
@@ -92,7 +92,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "CloudformationStack/NewsLambda/Resource",
+                "path": "NewsSearchStack/NewsSearchLambda/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
@@ -102,7 +102,7 @@
                     "handler": "dist.index.handler",
                     "role": {
                       "Fn::GetAtt": [
-                        "NewsLambdaServiceRole0C598DBB",
+                        "NewsSearchLambdaServiceRoleFF7D4B07",
                         "Arn"
                       ]
                     },
@@ -110,13 +110,119 @@
                     "tags": [
                       {
                         "key": "app",
-                        "value": "news-comparison"
+                        "value": "news-search-api"
                       }
                     ]
                   }
                 }
               }
             }
+          },
+          "GitHubAction": {
+            "id": "GitHubAction",
+            "path": "NewsSearchStack/GitHubAction",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NewsSearchStack/GitHubAction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::User",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "app",
+                        "value": "news-search-api"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "DeployLambda": {
+            "id": "DeployLambda",
+            "path": "NewsSearchStack/DeployLambda",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NewsSearchStack/DeployLambda/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyDocument": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "s3:PutObject",
+                            "s3:GetObject"
+                          ],
+                          "Effect": "Allow",
+                          "Resource": [
+                            {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  {
+                                    "Fn::GetAtt": [
+                                      "NewsSearchLambdaCodeBucket8303A269",
+                                      "Arn"
+                                    ]
+                                  },
+                                  "/*"
+                                ]
+                              ]
+                            },
+                            {
+                              "Fn::GetAtt": [
+                                "NewsSearchLambdaCodeBucket8303A269",
+                                "Arn"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "Action": "lambda:UpdateFunctionCode",
+                          "Effect": "Allow",
+                          "Resource": {
+                            "Fn::GetAtt": [
+                              "NewsSearchLambda7B906E09",
+                              "Arn"
+                            ]
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policyName": "DeployLambda2C7D0F8E",
+                    "users": [
+                      {
+                        "Ref": "GitHubAction7A87D423"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "DeployKeys": {
+            "id": "DeployKeys",
+            "path": "NewsSearchStack/DeployKeys",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::IAM::AccessKey",
+              "aws:cdk:cloudformation:props": {
+                "userName": {
+                  "Ref": "GitHubAction7A87D423"
+                }
+              }
+            }
+          },
+          "AccessKey": {
+            "id": "AccessKey",
+            "path": "NewsSearchStack/AccessKey"
+          },
+          "Secret Access Key": {
+            "id": "Secret Access Key",
+            "path": "NewsSearchStack/Secret Access Key"
           }
         }
       }
