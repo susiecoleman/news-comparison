@@ -1,0 +1,43 @@
+name: Deploy News Search Lambda
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: API/news-search-lambda
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_DEFAULT_REGION: eu-west-1
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      LAMBDA_FUNCTION_NAME: ${{ secrets.LAMBDA_FUNCTION_NAME}}
+      S3_BUCKET: ${{ secrets.NEWS_SEARCH_LAMBDA_CODE_BUCKET}}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Compile Typescript
+        run: yarn build
+      
+      - name: Install production dependencies only
+        run: |
+          rm -rf node_modules
+          yarn install --production=true
+
+      - name: Zip files
+        run: zip -r -9 function.zip node_modules dist
+
+      - name: Upload zip to S3
+        run: aws s3 cp function.zip s3://"$S3_BUCKET"
+
+      - name: Deploy to Lambda
+        run: aws lambda update-function-code --function-name "$LAMBDA_FUNCTION_NAME" --s3-key function.zip --s3-bucket "$S3_BUCKET"
