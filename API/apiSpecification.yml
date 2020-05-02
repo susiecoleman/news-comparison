@@ -1,7 +1,7 @@
 openapi: "3.0.2"
 info:
   title: News Comparison API
-  description: API to compare how news sources report on a story
+  description: API to compare how news sources report on a story. Powered by NewsAPI.org https://newsapi.org/
   version: "1.0"
 servers:
   - url: https://api.server.test/v1
