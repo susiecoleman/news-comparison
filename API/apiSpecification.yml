@@ -34,6 +34,8 @@ paths:
   /newsSearch:
     get:
       summary: Search for articles from a range of UK sources
+      security:
+        - ApiKeyAuth: []
       parameters:
         - name: q
           in: path

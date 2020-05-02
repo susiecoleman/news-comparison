@@ -5,7 +5,7 @@ import { config } from 'dotenv';
 config();
 
 exports.handler = async (event: Request) => {
-  return getSearchResults(event.q).then((result) => {
+  return getSearchResults(event.queryStringParameters.q).then((result) => {
     return {
       statusCode: result.statusCode,
       body: JSON.stringify(result.body),

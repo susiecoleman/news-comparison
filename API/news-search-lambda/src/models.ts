@@ -12,8 +12,12 @@ interface NewsAPIResponse {
   articles: NewsAPIArticle[];
 }
 
-interface Request {
+interface RequestParameters {
   q: string;
+}
+
+interface Request {
+  queryStringParameters: RequestParameters;
 }
 
 interface Error {
