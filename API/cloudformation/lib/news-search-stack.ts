@@ -40,7 +40,7 @@ class NewsSearchStack extends Stack {
     // The deployment process deploys the code in the "NewsSearchLambdaCodeBucket" to the lambda
     const lambda = new Function(this, "NewsSearchLambda", {
       runtime: Runtime.NODEJS_12_X,
-      handler: "dist.index.handler",
+      handler: "dist/index.handler",
       code: Code.fromInline("exports.handler = function(event,context){}"),
     });
 

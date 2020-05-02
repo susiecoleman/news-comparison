@@ -103,7 +103,7 @@
                     "code": {
                       "zipFile": "exports.handler = function(event,context){}"
                     },
-                    "handler": "dist.index.handler",
+                    "handler": "dist/index.handler",
                     "role": {
                       "Fn::GetAtt": [
                         "NewsSearchLambdaServiceRoleFF7D4B07",

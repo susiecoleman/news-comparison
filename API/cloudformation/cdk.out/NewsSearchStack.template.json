@@ -71,7 +71,7 @@
         "Code": {
           "ZipFile": "exports.handler = function(event,context){}"
         },
-        "Handler": "dist.index.handler",
+        "Handler": "dist/index.handler",
         "Role": {
           "Fn::GetAtt": [
             "NewsSearchLambdaServiceRoleFF7D4B07",
