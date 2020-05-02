@@ -12,6 +12,10 @@
         "id": "NewsSearchStack",
         "path": "NewsSearchStack",
         "children": {
+          "NewsAPIKey": {
+            "id": "NewsAPIKey",
+            "path": "NewsSearchStack/NewsAPIKey"
+          },
           "NewsSearchLambdaCodeBucket": {
             "id": "NewsSearchLambdaCodeBucket",
             "path": "NewsSearchStack/NewsSearchLambdaCodeBucket",
@@ -107,6 +111,13 @@
                       ]
                     },
                     "runtime": "nodejs12.x",
+                    "environment": {
+                      "variables": {
+                        "NEWS_API_KEY": {
+                          "Ref": "NewsAPIKey"
+                        }
+                      }
+                    },
                     "tags": [
                       {
                         "key": "app",

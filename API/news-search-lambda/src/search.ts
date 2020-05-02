@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import { NewsAPIResponse, Response, SearchResult } from './models';
 
 const getSearchResults = (q: string): Promise<Response> => {
-  const url = `https://newsapi.org/v2/everything?apiKey=${process.env.API_KEY}&language=en&q=${q}`;
+  const url = `https://newsapi.org/v2/everything?apiKey=${process.env.NEWS_API_KEY}&language=en&q=${q}`;
   return fetch(url)
     .then<NewsAPIResponse>((response) => {
       console.log(JSON.stringify(response));

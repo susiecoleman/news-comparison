@@ -40,14 +40,41 @@
             ]
           }
         ],
+        "/NewsSearchStack/NewsAPIKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NewsAPIKey",
+            "trace": [
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:27:24)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/snap/node/2638/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
         "/NewsSearchStack/NewsSearchLambdaCodeBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "NewsSearchLambdaCodeBucket8303A269",
             "trace": [
               "new Bucket (/home/susie/Code/news-comparison/API/cloudformation/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1015:22)",
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:26:20)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:33:20)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
@@ -75,8 +102,8 @@
             "trace": [
               "new Role (/home/susie/Code/news-comparison/API/cloudformation/node_modules/@aws-cdk/aws-iam/lib/role.ts:315:18)",
               "new Function (/home/susie/Code/news-comparison/API/cloudformation/node_modules/@aws-cdk/aws-lambda/lib/function.ts:478:31)",
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:34:20)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:41:20)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
@@ -103,8 +130,8 @@
             "data": "NewsSearchLambda7B906E09",
             "trace": [
               "new Function (/home/susie/Code/news-comparison/API/cloudformation/node_modules/@aws-cdk/aws-lambda/lib/function.ts:493:35)",
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:34:20)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:41:20)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
@@ -131,8 +158,8 @@
             "data": "GitHubAction7A87D423",
             "trace": [
               "new User (/home/susie/Code/news-comparison/API/cloudformation/node_modules/@aws-cdk/aws-iam/lib/user.ts:208:18)",
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:40:32)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:49:32)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
@@ -159,8 +186,8 @@
             "data": "DeployLambda2C7D0F8E",
             "trace": [
               "new Policy (/home/susie/Code/news-comparison/API/cloudformation/node_modules/@aws-cdk/aws-iam/lib/policy.ts:127:22)",
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:42:34)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:51:34)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
@@ -186,8 +213,8 @@
             "type": "aws:cdk:logicalId",
             "data": "DeployKeys",
             "trace": [
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:57:24)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:66:24)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
@@ -213,8 +240,8 @@
             "type": "aws:cdk:logicalId",
             "data": "AccessKey",
             "trace": [
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:61:5)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:70:5)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
@@ -240,8 +267,8 @@
             "type": "aws:cdk:logicalId",
             "data": "SecretAccessKey",
             "trace": [
-              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:62:5)",
-              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:69:1)",
+              "new NewsSearchStack (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:71:5)",
+              "Object.<anonymous> (/home/susie/Code/news-comparison/API/cloudformation/lib/news-search-stack.ts:78:1)",
               "Module._compile (internal/modules/cjs/loader.js:778:30)",
               "Module.m._compile (/home/susie/Code/news-comparison/API/cloudformation/node_modules/ts-node/src/index.ts:839:23)",
               "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",

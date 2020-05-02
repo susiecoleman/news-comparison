@@ -1,4 +1,11 @@
 {
+  "Parameters": {
+    "NewsAPIKey": {
+      "Type": "String",
+      "Description": "API Key to access https://newsapi.org/",
+      "NoEcho": true
+    }
+  },
   "Resources": {
     "NewsSearchLambdaCodeBucket8303A269": {
       "Type": "AWS::S3::Bucket",
@@ -72,6 +79,13 @@
           ]
         },
         "Runtime": "nodejs12.x",
+        "Environment": {
+          "Variables": {
+            "NEWS_API_KEY": {
+              "Ref": "NewsAPIKey"
+            }
+          }
+        },
         "Tags": [
           {
             "Key": "app",

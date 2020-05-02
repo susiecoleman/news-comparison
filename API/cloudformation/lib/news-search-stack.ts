@@ -6,6 +6,7 @@ import {
   App,
   CfnOutput,
   RemovalPolicy,
+  CfnParameter,
 } from "@aws-cdk/core";
 import { Function, Runtime, Code } from "@aws-cdk/aws-lambda";
 import { Bucket, BucketAccessControl } from "@aws-cdk/aws-s3";
@@ -23,6 +24,12 @@ class NewsSearchStack extends Stack {
 
     Tag.add(this, "app", "news-search-api");
 
+    const newsAPIKey = new CfnParameter(this, "NewsAPIKey", {
+      type: "String",
+      description: "API Key to access https://newsapi.org/",
+      noEcho: true,
+    });
+
     const bucket = new Bucket(this, "NewsSearchLambdaCodeBucket", {
       bucketName: "news-lambda-code-repo",
       accessControl: BucketAccessControl.PRIVATE,
@@ -36,6 +43,8 @@ class NewsSearchStack extends Stack {
       handler: "dist.index.handler",
       code: Code.fromInline("exports.handler = function(event,context){}"),
     });
+
+    lambda.addEnvironment("NEWS_API_KEY", newsAPIKey.valueAsString);
 
     const githubAction: User = new User(this, "GitHubAction", {});
 
