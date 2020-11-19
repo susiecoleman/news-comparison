@@ -8,7 +8,6 @@ function articleResponse(searchTerm, source) {
     source +
     "&q=" +
     searchTerm;
-  console.log(url);
   return fetch(url)
     .then(function (response) {
       return response.json();
