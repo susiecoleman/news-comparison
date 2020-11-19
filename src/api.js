@@ -19,6 +19,13 @@ function articleResponse(searchTerm, source) {
       content["image"] = article.urlToImage;
       content["url"] = article.url;
       return content;
+    })
+    .catch(function () {
+      return {
+        headline: "No relevant article available",
+        image: "paperhat.png",
+        url: "",
+      };
     });
 }
 
