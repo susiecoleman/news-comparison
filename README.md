@@ -4,8 +4,6 @@ Search engine to compare how different news sources cover the same topic.
 
 [http://news-comparison.herokuapp.com/](http://news-comparison.herokuapp.com/)
 
-Currently a WIP
-
 ## Seting up the application
 
 Run `npm install`
@@ -28,4 +26,8 @@ The application will now be available at [http://localhost:5000](http://localhos
 
 The application is hosted on Heroku and was set up with [this guide](https://devcenter.heroku.com/articles/deploying-nodejs)
 
-To deploy to Heroku run `git push heroku master`. Which will deploy the version of the code on master to Heroku and [http://news-comparison.herokuapp.com/](http://news-comparison.herokuapp.com/)
+- Login to heroku: `heroku login`
+- Add heroku as a remote: `heroku git:remote -a news-comparison`
+- Push master: `git push heroku master`.
+
+Which will deploy the version of the code on master to Heroku and [http://news-comparison.herokuapp.com/](http://news-comparison.herokuapp.com/).
