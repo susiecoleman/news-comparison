@@ -14,9 +14,11 @@ function articleResponse(searchTerm, source) {
     })
     .then(function (json) {
       var article = json.articles[0];
+      console.info(article);
       var content = {};
       content["headline"] = article.title;
-      content["image"] = article.urlToImage;
+      content["image"] =
+        article.urlToImage === "null" ? "paperhat.png" : article.urlToImage;
       content["url"] = article.url;
       return content;
     })
